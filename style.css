@@ -62,19 +62,20 @@ main{
 }
 
 #jadwal-container{
-  width:100%;
-  max-width:700px;
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
+  grid-template-columns:1fr 1fr; /* 2 kolom */
+  gap:8px;
+  margin-top:18px;
 }
 
 .sholat{
-  background:rgba(255,255,255,.1);
-  border-radius:14px;
-  padding:18px;
-  text-align:center;
-  transition:.2s;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 12px;
+  background:rgba(0,0,0,.45);
+  border-radius:10px;
+  font-size:15px;
 }
 
 .sholat:hover{
@@ -97,41 +98,17 @@ main{
  /* ================= MOBILE ================= */
 @media(max-width:600px){
   #jadwal-container{
-    grid-template-columns:repeat(1,1fr);
-    gap:8px;
-  margin-top:18px;
+    grid-template-columns:repeat(3,1fr);
   }
 
   #countdown{
     font-size:30px;
   }
 }
-/* RUNNING TEXT */
-.running-text{
-  overflow:hidden;
-  white-space:nowrap;
-  background:rgba(0,0,0,.55);
-  border-radius:8px;
-  margin-bottom:8px;
-  padding:6px 0;
-}
 
-.running-inner{
-  display:inline-block;
-  padding-left:100%;
-  animation:jalan 12s linear infinite;
-  color:#ff4040;
-  font-weight:bold;
-  font-size:16px;
-}
-
-/* animasi geser */
-@keyframes jalan{
-  0%   { transform:translateX(0); }
-  100% { transform:translateX(-100%); }
-}
 /* HARI BESAR */
-#hariBesarBox{
+#hariBesarBox{ grid-column: 1 / -1;
+}
   background:rgba(0,0,0,.55);
   padding:10px 14px;
   border-radius:10px;
@@ -140,10 +117,4 @@ main{
   font-weight:600;
   text-align:center;
   color:#ffd966;
-}
-
-/* animasi geser */
-@keyframes jalan{
-  0%   { transform:translateX(0); }
-  100% { transform:translateX(-100%); }
 }
